@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const basePath = process.env.NEXT_PUBLIC_STATIC_EXPORT === "true" ? "/loanlens-ai" : "";
+
 export const metadata: Metadata = {
   title: "LoanLens AI | Loan Readiness & EMI Planner",
   description: "Explore illustrative loan readiness, credit context, EMIs, and what-if scenarios in one private planning workspace.",
-  other: {
-    "codex-preview": "development",
-  },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: `${basePath}/favicon.svg`,
+    shortcut: `${basePath}/favicon.svg`,
   },
 };
 

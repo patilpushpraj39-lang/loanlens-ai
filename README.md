@@ -11,6 +11,11 @@ npm run dev
 
 The calculator and comparisons work without an API key. Saved plans are stored in this browser's local storage and remain available on the same device. They are lost if site data is cleared and do not sync across devices.
 
+## Hosting
+
+- **Vercel:** Import this repository as a Next.js project. The calculator runs without secrets. Optional Claude and Google Sheets routes require the environment variables below.
+- **GitHub Pages:** The Pages workflow builds a static version at the repository's `/loanlens-ai/` path. It includes the planner, credit context, EMI breakdown, tips, and browser-local saved plans. Server-side Claude and Google Sheets are unavailable on this static host.
+
 ## Optional integrations
 
 Configure these as Vercel environment variables (secret values must never be committed):
