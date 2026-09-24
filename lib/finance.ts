@@ -120,17 +120,9 @@ export function analyzeLoan(inputs: LoanInputs) {
     reasons.push("Less than one year of work history was entered.");
     actions.push("Check the lender's work-history requirements or consider applying later.");
   }
-  const employmentNeedsReview = inputs.employment === "student" || inputs.employment === "other";
-  if (employmentNeedsReview) {
-    reasons.push("The employment category needs an individual income-source review in this demo.");
-    actions.push("Check which income documents the lender accepts for your employment category.");
-  } else if (inputs.employment === "self-employed") {
-    reasons.push("Self-employed income may vary; this estimate uses only the monthly amount entered.");
-    actions.push("Compare this plan against a lower-income month and check required business-income documents.");
-  }
   const blockers = burden > 0.5 || (inputs.creditScore !== null && inputs.creditScore < 650) ||
     inputs.age < 21 || inputs.age + inputs.tenureMonths / 12 > 65;
-  const cautions = employmentNeedsReview || burden > 0.4 || inputs.creditScore === null ||
+  const cautions = burden > 0.4 || inputs.creditScore === null ||
     (inputs.creditScore !== null && inputs.creditScore < 700) || inputs.experienceYears < 1;
   const status = blockers ? "Adjust the plan" : cautions ? "Review carefully" : "Looks manageable";
   if (!actions.length) actions.push("Compare offers and read the lender's actual eligibility and fee terms.");
