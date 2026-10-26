@@ -11,6 +11,7 @@ LoanLens AI is an educational financial-planning web application that helps user
 - **Final project report (PDF):** [Open or download the report](docs/LoanLens_AI_Capstone_Report.pdf)
 - **Technical report (Markdown):** [docs/CAPSTONE_REPORT.md](docs/CAPSTONE_REPORT.md)
 - **Delivery checklist:** [docs/TASKS.md](docs/TASKS.md)
+- **Code guide:** [docs/CODE_GUIDE.md](docs/CODE_GUIDE.md)
 
 ## Core modules
 
@@ -31,6 +32,27 @@ LoanLens AI is an educational financial-planning web application that helps user
 - Recharts
 - Vercel deployment
 - Optional Anthropic Claude and Google Sheets server routes
+
+## Source code and verification
+
+The evaluator can inspect the main implementation directly:
+
+- **Application workspace:** [app/page.tsx](app/page.tsx)
+- **Financial calculation engine:** [lib/finance.ts](lib/finance.ts)
+- **Reusable interface components:** [components/](components)
+- **Python verification engine:** [python/loan_engine.py](python/loan_engine.py)
+- **Automated Python tests:** [python/test_loan_engine.py](python/test_loan_engine.py)
+- **Complete source-code guide:** [docs/CODE_GUIDE.md](docs/CODE_GUIDE.md)
+
+Run the independent Python verification:
+
+```bash
+cd python
+python loan_engine.py
+python -m unittest -v
+```
+
+The Python module is a genuine dependency-free reference implementation of the EMI, debt-load, amortization and readiness calculations. The deployed Next.js application continues to use the TypeScript engine in `lib/finance.ts`.
 
 ## Run locally
 
