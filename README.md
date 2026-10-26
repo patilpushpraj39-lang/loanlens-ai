@@ -8,7 +8,8 @@ LoanLens AI is an educational financial-planning web application that helps user
 
 - **Live application:** https://loanlens-ai-henna.vercel.app/
 - **Source code:** https://github.com/patilpushpraj39-lang/loanlens-ai
-- **Detailed report:** [docs/CAPSTONE_REPORT.md](docs/CAPSTONE_REPORT.md)
+- **Final project report (PDF):** [Open or download the report](docs/LoanLens_AI_Capstone_Report.pdf)
+- **Technical report (Markdown):** [docs/CAPSTONE_REPORT.md](docs/CAPSTONE_REPORT.md)
 - **Delivery checklist:** [docs/TASKS.md](docs/TASKS.md)
 
 ## Core modules
