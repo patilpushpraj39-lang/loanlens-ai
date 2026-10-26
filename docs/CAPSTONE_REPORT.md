@@ -1,4 +1,10 @@
-# LoanLens AI — Capstone Report
+# LoanLens AI - Capstone Report
+
+**Submitted by:** Pushpraj Patil  
+**Domain:** AI Specialist - Banking, Financial Services and Insurance  
+**Source code:** https://github.com/patilpushpraj39-lang/loanlens-ai  
+**Live demo:** https://loanlens-ai-henna.vercel.app/  
+**Deployment checked:** 26 October 2026
 
 ## Abstract
 LoanLens AI is a web-based, educational BFSI simulator. It combines a transparent loan readiness estimate, user-provided credit score context, EMI amortization, and financial tips. Its What-if Lab compares a pinned plan against live changes. The app is built with Next.js for Vercel; optional server-side integrations support Claude explanations and Google Sheets export.
