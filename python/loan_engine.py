@@ -3,7 +3,7 @@
 This module mirrors the public financial formulas used by the web application.
 It is intentionally dependency-free so evaluators can run it with Python 3.
 It is a verification/reference implementation; the deployed Next.js interface
-continues to use the TypeScript engine in ``lib/finance.ts``.
+continues to use the JavaScript engine in ``lib/finance.js``.
 """
 
 from __future__ import annotations

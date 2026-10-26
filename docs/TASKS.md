@@ -13,7 +13,7 @@
 - [x] Safe server routes for optional Claude and Google Sheets integrations
 - [x] README with setup, architecture, calculations and live links
 - [x] Capstone report with workflow and system architecture
-- [x] TypeScript check and production build verification
+- [x] JavaScript production build and Python test verification
 
 ## Optional future enhancements
 

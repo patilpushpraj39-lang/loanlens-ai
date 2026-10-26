@@ -15,21 +15,21 @@ LoanLens AI is an educational financial-planning web application that helps user
 
 ## Core modules
 
-| Module | What it does |
-| --- | --- |
-| Loan Planner | Calculates EMI, debt load, total interest and repayment, then explains an illustrative readiness result |
-| Credit Context | Interprets a credit score entered by the user without pretending to fetch bureau data |
-| EMI Breakdown | Shows the year-by-year split between principal, interest and outstanding balance |
-| Financial Tips | Provides deterministic suggestions based on the current plan |
-| What-if Lab | Compares the current scenario with a pinned baseline while the user changes amount, tenure or debt |
-| Saved Plans | Saves, reloads and deletes fictional scenarios in the same browser |
+| Module         | What it does                                                                                            |
+| -------------- | ------------------------------------------------------------------------------------------------------- |
+| Loan Planner   | Calculates EMI, debt load, total interest and repayment, then explains an illustrative readiness result |
+| Credit Context | Interprets a credit score entered by the user without pretending to fetch bureau data                   |
+| EMI Breakdown  | Shows the year-by-year split between principal, interest and outstanding balance                        |
+| Financial Tips | Provides deterministic suggestions based on the current plan                                            |
+| What-if Lab    | Compares the current scenario with a pinned baseline while the user changes amount, tenure or debt      |
+| Saved Plans    | Saves, reloads and deletes fictional scenarios in the same browser                                      |
 
 ## Technology
 
 - Next.js 16 and React 19
-- TypeScript
+- JavaScript and JSX
 - Tailwind CSS
-- Recharts
+- Python calculation verification
 - Vercel deployment
 - Optional Anthropic Claude and Google Sheets server routes
 
@@ -37,8 +37,8 @@ LoanLens AI is an educational financial-planning web application that helps user
 
 The evaluator can inspect the main implementation directly:
 
-- **Application workspace:** [app/page.tsx](app/page.tsx)
-- **Financial calculation engine:** [lib/finance.ts](lib/finance.ts)
+- **Application workspace:** [app/page.jsx](app/page.jsx)
+- **Financial calculation engine:** [lib/finance.js](lib/finance.js)
 - **Reusable interface components:** [components/](components)
 - **Python verification engine:** [python/loan_engine.py](python/loan_engine.py)
 - **Automated Python tests:** [python/test_loan_engine.py](python/test_loan_engine.py)
@@ -52,7 +52,7 @@ python loan_engine.py
 python -m unittest -v
 ```
 
-The Python module is a genuine dependency-free reference implementation of the EMI, debt-load, amortization and readiness calculations. The deployed Next.js application continues to use the TypeScript engine in `lib/finance.ts`.
+The Python module is a genuine dependency-free reference implementation of the EMI, debt-load, amortization and readiness calculations. The deployed Next.js application uses the JavaScript engine in `lib/finance.js`.
 
 ## Run locally
 
@@ -74,8 +74,9 @@ The calculator, comparison tools and local saved plans work without API credenti
 ```text
 app/                 Application pages and server routes
 components/          Interface components
-lib/finance.ts       EMI, amortization and readiness logic
-lib/sheets.ts        Optional Google Sheets integration
+lib/finance.js       EMI, amortization and readiness logic
+lib/sheets.js        Optional Google Sheets integration
+python/              Independent Python engine and automated tests
 docs/                Project report and delivery checklist
 public/              Static assets
 ```
@@ -96,7 +97,7 @@ Debt load is calculated as:
 (existing monthly EMIs + new EMI) / monthly income
 ```
 
-The readiness markers are transparent educational assumptions defined in `lib/finance.ts`. They are not a lender's underwriting rules or an approval probability.
+The readiness markers are transparent educational assumptions defined in `lib/finance.js`. They are not a lender's underwriting rules or an approval probability.
 
 ## Optional integrations
 
@@ -113,7 +114,7 @@ Secrets must be configured in Vercel and must never be committed to GitHub.
 
 - Public Vercel deployment loads successfully
 - EMI, zero-rate, amortization and invalid-input boundaries were checked
-- TypeScript checks and the production build passed
+- JavaScript production build and Python tests passed
 - The sample fixture of Rs. 5,00,000 at 12% for 36 months produces an EMI of approximately Rs. 16,607.15
 
 ## Suggested demonstration
